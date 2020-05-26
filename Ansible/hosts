@@ -1,0 +1,21 @@
+
+[all]
+172.26.132.107 ansible_ssh_private_key_file=~/.ssh/assignment2.pem ansible_user=ubuntu ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+172.26.131.1 ansible_ssh_private_key_file=~/.ssh/assignment2.pem ansible_user=ubuntu ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+172.26.130.63 ansible_ssh_private_key_file=~/.ssh/assignment2.pem ansible_user=ubuntu ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+172.26.128.136 ansible_ssh_private_key_file=~/.ssh/assignment2.pem ansible_user=ubuntu ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+
+[webserver]
+172.26.128.136 ansible_ssh_private_key_file=~/.ssh/assignment2.pem ansible_user=ubuntu ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+
+[dbservers]
+172.26.132.107 ansible_ssh_private_key_file=~/.ssh/assignment2.pem ansible_user=ubuntu ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+172.26.131.1 ansible_ssh_private_key_file=~/.ssh/assignment2.pem ansible_user=ubuntu ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+172.26.130.63 ansible_ssh_private_key_file=~/.ssh/assignment2.pem ansible_user=ubuntu ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+
+[dbmaster]
+172.26.130.63 ansible_ssh_private_key_file=~/.ssh/assignment2.pem ansible_user=ubuntu ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+
+[dbworker]
+172.26.131.1 ansible_ssh_private_key_file=~/.ssh/assignment2.pem ansible_user=ubuntu ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+172.26.132.107 ansible_ssh_private_key_file=~/.ssh/assignment2.pem ansible_user=ubuntu ansible_ssh_common_args='-o StrictHostKeyChecking=no'

@@ -1,0 +1,33 @@
+- hosts: dbserver
+  vars_files:
+    - host_vars/vars.yaml
+  gather_facts: false
+
+  roles:
+    - role: couchdb_packages
+    - role: mount_volumes
+
+- hosts: webserver
+  vars_files:
+    - host_vars/vars.yaml
+  gather_facts: false
+
+  roles:
+    - role: web_packages
+
+- hosts: dbmaster
+  vars_files:
+    - host_vars/vars1.yaml
+  gather_facts: false
+
+  roles:
+    - role: dbmaster
+
+- hosts: dbworker
+  vars_files:
+    - host_vars/vars1.yaml
+  gather_facts: false
+
+  roles:
+    - role: dbworkder
+    - role: dbcluster

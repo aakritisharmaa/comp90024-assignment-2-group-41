@@ -1,0 +1,81 @@
+# Common vars
+availability_zone: melbourne-qh2-uom
+
+# Volume
+volumes:
+  - vol_name: additional-vol-1
+    vol_size: 30
+  - vol_name: additional-vol-2
+    vol_size: 30
+  - vol_name: additional-vol-3
+    vol_size: 30
+  - vol_name: additional-vol-4
+    vol_size: 30
+
+# Security group
+security_groups:
+  - name: security_groups_ssh
+    description: "security group for SSH access"
+    protocol: tcp
+    port_range_min: 22
+    port_range_max: 22
+    remote_ip_prefix: 0.0.0.0/0
+  - name: security_groups_http
+    description: "security group for HTTP"
+    protocol: tcp
+    port_range_min: 80
+    port_range_max: 80
+    remote_ip_prefix: 0.0.0.0/0
+  - name: security_groups_couchdb1
+    description: "security group for couchdb1"
+    protocol: tcp
+    port_range_min: 5984 
+    port_range_max: 5984
+    remote_ip_prefix: 0.0.0.0/0
+  - name: security_groups_couchdb2
+    description: "security group for couchdb2"
+    protocol: tcp
+    port_range_min: 9100 
+    port_range_max: 9100 
+    remote_ip_prefix: 0.0.0.0/0
+  - name: security_groups_couchdb3
+    description: "security group for couchdb3"
+    protocol: tcp
+    port_range_min: 4369 
+    port_range_max: 4369
+    remote_ip_prefix: 0.0.0.0/0
+  - name: security_groups_couchdb_origins
+    description: "security group for couchdb origins"
+    protocol: tcp
+    port_range_min: 8080
+    port_range_max: 8080
+    remote_ip_prefix: 0.0.0.0/0
+  - name: web
+    description: "web"
+    protocol: tcp
+    port_range_min: 8080
+    port_range_max: 8080
+    remote_ip_prefix: 0.0.0.0/0
+  - name: nodejs
+    description: "nodejs"
+    protocol: tcp
+    port_range_min: 3000
+    port_range_max: 3000
+    remote_ip_prefix: 0.0.0.0/0
+
+# Instance
+instances:
+  - name: couchdb-instance-1
+    volumes: 'additional-vol-1'
+  - name: couchdb-instance-2
+    volumes: 'additional-vol-2'
+  - name: couchdb-instance-3
+    volumes: 'additional-vol-3'
+  - name: web-instance-4
+    volumes: 'additional-vol-4'
+instance_image: 45225edb-66d8-4fd0-bf41-132a31a18166
+instance_key_name: assignment2 
+instance_flavor: uom.mse.2c9g
+
+
+##proxy: "http_proxy=\"http://wwwproxy.unimelb.edu.au:8000\"\nhttps_proxy=\"http://wwwproxy.unimelb.edu.au:8000\"\nftp_proxy=\"http://wwwproxy.unimelb.edu.au:8000\"\nno_proxy=localhost,127.0.0.1,127.0.1.1,ubuntu"

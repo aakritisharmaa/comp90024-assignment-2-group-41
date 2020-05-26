@@ -1,0 +1,20 @@
+---
+
+
+- host: dbservers
+  gather_facts: false
+  name: Gather facts of remote host
+  vars: 
+    instance_name: 【‘couchdb-instance-1‘，‘couchdb-instance-2’，‘couchdb-instance-3’】
+    instance_image: 45225edb-66d8-4fd0-bf41-132a31a18166
+    instance_key_name: assignment2 
+    instance_flavor: uom.mse.2c9g
+    availability_zone: melbourne-qh2-uom
+
+- host: COMP90024
+  vars: 
+    ansible_python_interpreter: /user/bin/python3
+    ansible_user: ubuntu
+    ansible_ssh_private_key_file: ~/.ssh/assignment2.pem 
+    ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
+
