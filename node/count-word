@@ -1,0 +1,8 @@
+function (doc) {
+    counter = {}
+    doc.text.toLowerCase().split(/\W+/).forEach((word) => {
+        if (word.length > 1) {
+            emit(doc.sa3 + ":" + word, 1)
+        }
+    });
+}
